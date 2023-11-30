@@ -6,6 +6,7 @@ public class SpiralEnlarge : MonoBehaviour
     public GameObject prefabToSpawn;
     public GameObject targetObject; // The GameObject to scale and spiral
     public GameObject deleteObject;
+    public GameObject displayObject;
 
     public float scaleSpeed = 0.5f; // Speed of scaling
     public float spiralSpeed = 1.0f; // Speed of spiraling
@@ -47,6 +48,10 @@ public class SpiralEnlarge : MonoBehaviour
 
     public void createSpiral()
     {
+        if (displayObject)
+        {
+            displayObject.SetActive(true);
+        }
         // Calculate the position for the new empty GameObject
         Vector3 newPosition = this.transform.position - Vector3.up * spawnDepth;
 

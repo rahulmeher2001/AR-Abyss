@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FloatingEnemy : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class FloatingEnemy : MonoBehaviour
 
             // Rotate the enemy to always face the player
             transform.LookAt(player);
+
+            if (Vector3.Distance(player.position, transform.position)>15)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 }
